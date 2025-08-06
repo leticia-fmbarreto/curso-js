@@ -17,22 +17,16 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area">
         Interaja...
     </div>
     <script>
         var a = window.document.getElementById('area')  
-        //----------------------------------------------------------------- 
-        // ESCOPO GLOBAL, QUANDO CRIADO DO LADO DE FORA, SERVE PARA TODAS AS FUNÇÕES CRIADAS!
-        // Não é a melhor coisa a se fazer, por problemas de memória...
-        //------------------------------------------------------------------
-
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        
         function clicar() {
-
-            //---------------------------------------------------------------
-            // TAMBÉM POSSO CRIAR UMA VARIÁVEL PARA CADA FUNÇÃO DA SEGUINTE FORMA: var a = window.document.getElementById('area') E TAMBÉM POSSO UTILIZAR NO LUGAR DE getElementById(), o querySelector()
-            //---------------------------------------------------------------
-
             a.innerText = 'Clicou!'
             a.style.background = 'black'
         }
